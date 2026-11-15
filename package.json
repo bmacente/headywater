@@ -1,1 +1,14 @@
-{"name":"headywater","version":"0.1.0","private":true,"type":"module","engines":{"node":"24.x"},"scripts":{"build":"node scripts/build.mjs","check":"node --check site.js && node --check scripts/build.mjs"}}
+{
+  "name": "headywater",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node --check site.js && node --check scripts/build.mjs",
+    "test": "npm run build && node tests/interaction.cjs"
+  }
+}

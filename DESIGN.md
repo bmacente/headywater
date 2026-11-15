@@ -1,0 +1,4 @@
+# Azzurri / cold revelation
+User-pinned direction; seed: none. An oversized blue can interrupts a full-width sporting wordmark. The page moves from saturated blue through a quiet silver product story into an ice-blue interactive packaging study. Native scroll drives one product rotation; a separate temperature slider reveals Italy on the can. No football federation marks or implied affiliation.
+
+Palette: Azzurri #0057D9, midnight #071D49, white #F6F9FF, ice #D5EFFF; small Italian green #008C45 / red #D72638 accents. Barlow Condensed display type with a clear sans-serif body. Broad whitespace, compressed athletic headlines, no card grid. Can uses cylindrical metallic shading, inset lid and base, curved printing and condensation. Italy geometry is Natural Earth public-domain cartography. Motion off and system reduced motion preserve all narrative content and the manual cold control.

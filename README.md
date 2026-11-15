@@ -8,9 +8,11 @@ Node 24.x; no runtime dependencies. Run `npm run check` and `npm run build`. Ser
 
 ## Preview boundaries
 
-Packaging is a CSS design study, not confirmed production packaging. Brand copy is a proposal; only Italian origin and sparkling-water product category were supplied. No mineral, source-town, ingredient, cannabinoid, certification, availability or health claims are made. No checkout, customer collection, or invented contact details are included. Sharing uses the browser's native share UI or clipboard.
+Packaging is an Azzurri-blue aluminum-can CSS design study, not confirmed production packaging. The interactive chill slider reveals a map of Italy and condensation as a proposed thermochromic ink effect. No physical temperature sensor is used; ink feasibility and temperature thresholds remain unconfirmed. Brand copy is a proposal; only Italian origin and sparkling-water product category were supplied. No mineral, source-town, ingredient, cannabinoid, certification, availability or health claims are made. No checkout, customer collection, or invented contact details are included. Sharing uses the browser's native share UI or clipboard.
 
-The preview is noindex. Review final brand copy, packaging, legal trademark use, product details and purchase/contact destination before a public launch. Do not change GoDaddy DNS until the owner approves the site. Google Fonts is used with system fallbacks.
+The preview is noindex. Review final brand copy, packaging, legal trademark use, product details and purchase/contact destination before a public launch. Do not change GoDaddy DNS until the owner approves the site. Google Fonts is used with system fallbacks (Barlow Condensed and Manrope).
+
+Italy outline: Natural Earth 1:110m admin-0 countries, public domain, https://www.naturalearthdata.com/about/terms-of-use/. Includes Sicily and Sardinia. The palette is inspired by Italian football; no federation logos or affiliation claims.
 
 ## Research
 
