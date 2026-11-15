@@ -5,3 +5,19 @@ nav.addEventListener('click',event=>{if(event.target.closest('a')){toggle.setAtt
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.focus();}});
 document.querySelector('#year').textContent=String(new Date().getFullYear());
 document.querySelector('#share').addEventListener('click',async()=>{const status=document.querySelector('#share-status');try{if(navigator.share){await navigator.share({title:'Headywater — For the heads.',url:location.href.split('#')[0]});status.textContent='Good taste travels.';}else{await navigator.clipboard.writeText(location.href.split('#')[0]);status.textContent='Link copied. Pass it around.';}}catch(error){if(error.name!=='AbortError')status.textContent='Copy the address from your browser to share this preview.';}});
+const story=document.querySelector('.scroll-story');
+const chapters=[...document.querySelectorAll('.story-chapter')];
+const motionButton=document.querySelector('#motion-toggle');
+const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
+let motionEnabled=!motionPreference.matches;
+try{const saved=localStorage.getItem('headywater-motion');if(saved!==null)motionEnabled=saved==='on'&&!motionPreference.matches;}catch{}
+let pendingFrame=false;
+function updateStory(){pendingFrame=false;if(!motionEnabled)return;const rect=story.getBoundingClientRect();const progress=Math.max(0,Math.min(1,-rect.top/Math.max(1,rect.height-innerHeight)));story.style.setProperty('--story-progress',progress.toFixed(4));const step=Math.min(2,Math.floor(progress*3));story.dataset.step=String(step);chapters.forEach((chapter,index)=>{chapter.classList.toggle('active',index===step);chapter.setAttribute('aria-hidden',String(index!==step));});document.querySelector('.story-count').textContent=String(step+1).padStart(2,'0')+' / 03';}
+const reveals=document.querySelectorAll('.water-grid>div,.headspace-grid>div,.company>h2,.questions-grid');
+const observer='IntersectionObserver' in window?new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}});},{threshold:.12}):null;
+function applyMotion(){document.body.dataset.motion=motionEnabled?'on':'off';document.body.classList.toggle('js-motion',motionEnabled&&Boolean(observer));motionButton.textContent=motionEnabled?'Motion on':'Motion off';motionButton.setAttribute('aria-pressed',String(!motionEnabled));if(motionEnabled){reveals.forEach(el=>observer?.observe(el));updateStory();}else chapters.forEach(chapter=>chapter.removeAttribute('aria-hidden'));}
+motionButton.addEventListener('click',()=>{motionEnabled=!motionEnabled;try{localStorage.setItem('headywater-motion',motionEnabled?'on':'off');}catch{}applyMotion();});
+motionPreference.addEventListener('change',event=>{if(event.matches){motionEnabled=false;applyMotion();}});
+addEventListener('scroll',()=>{if(motionEnabled&&!pendingFrame){pendingFrame=true;requestAnimationFrame(updateStory);}},{passive:true});
+addEventListener('resize',()=>{if(motionEnabled&&!pendingFrame){pendingFrame=true;requestAnimationFrame(updateStory);}});
+applyMotion();
