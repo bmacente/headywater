@@ -1,4 +1,4 @@
-# Headywater
+# headywater
 
 Independent brand website for Headywater: sparkling water from Italy with a visual identity informed by connoisseur and functional-glass culture.
 
